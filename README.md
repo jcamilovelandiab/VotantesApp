@@ -1,1 +1,1 @@
-# Hospital application in Android
+# Votantes application in Android
