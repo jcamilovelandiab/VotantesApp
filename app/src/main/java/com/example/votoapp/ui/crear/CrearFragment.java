@@ -181,18 +181,41 @@ public class CrearFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int opEstado = sp_estado.getSelectedItemPosition();
-                int municipioArray=-1;
+                int municipioArray=-1, seccionArray=-1, localidadArray=-1;
                 switch (opEstado){
-                    case 1: municipioArray=R.array.mexico; break;
-                    case 2: municipioArray = R.array.cdmx; break;
-                    case 3: municipioArray = R.array.morelos; break;
-                    case 4: municipioArray = R.array.guerrero; break;
+                    case 1:
+                        municipioArray=R.array.mexico;
+                        seccionArray=R.array.seccion_mexico;
+                        localidadArray=R.array.localidad_mexico;
+                        break;
+                    case 2:
+                        municipioArray = R.array.cdmx;
+                        seccionArray=R.array.seccion_cdmx;
+                        localidadArray=R.array.localidad_cdmx;
+                        break;
+                    case 3:
+                        municipioArray = R.array.morelos;
+                        seccionArray=R.array.seccion_morelos;
+                        localidadArray=R.array.localidad_morelos;
+                        break;
+                    case 4:
+                        municipioArray = R.array.guerrero;
+                        seccionArray=R.array.seccion_guerrero;
+                        localidadArray=R.array.localidad_guerrero;
+                        break;
                 }
                 if(opEstado!=0){
                     strEstado = estadoAdapter.getItem(opEstado).toString();
-                    final ArrayAdapter<CharSequence> municipiosAdapter =
+
+                    final ArrayAdapter<CharSequence> municipioAdapter =
                             ArrayAdapter.createFromResource(getContext(), municipioArray, android.R.layout.simple_spinner_item);
-                    configureSpinnerMunicipio(municipiosAdapter);
+                    final ArrayAdapter<CharSequence> seccionAdapter =
+                            ArrayAdapter.createFromResource(getContext(), seccionArray, android.R.layout.simple_spinner_item);
+                    final ArrayAdapter<CharSequence> localidadAdapter =
+                            ArrayAdapter.createFromResource(getContext(), localidadArray, android.R.layout.simple_spinner_item);
+                    configureSpinnerMunicipio(municipioAdapter);
+                    configureSpinnerSeccion(seccionAdapter);
+                    configureSpinnerLocalidad(localidadAdapter);
                 }
             }
             @Override
@@ -210,10 +233,44 @@ public class CrearFragment extends Fragment implements OnMapReadyCallback {
                 if(opMunicipio!=0){
                     strMunicipio = municipiosAdapter.getItem(opMunicipio).toString();
                     Toast.makeText(getContext(),"Estado: "+strEstado+"\nMunicipio: "+strMunicipio, Toast.LENGTH_SHORT).show();
-
                     String direccion = strMunicipio.split(" ")[1]+", "+strEstado.split(" ")[2]+", Mexico";
                     busqueDireccion(direccion);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
 
+    private void configureSpinnerSeccion(final ArrayAdapter<CharSequence> seccionAdapter){
+        sp_seccion.setAdapter(seccionAdapter);
+        sp_seccion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int opSeccion = sp_seccion.getSelectedItemPosition();
+                if(opSeccion!=0){
+                    strSeccion = seccionAdapter.getItem(opSeccion).toString();
+                    Toast.makeText(getContext(),"Sección: "+strSeccion, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void configureSpinnerLocalidad(final ArrayAdapter<CharSequence> localidadAdapter){
+        sp_localidad.setAdapter(localidadAdapter);
+        sp_localidad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int opLocalidad = sp_localidad.getSelectedItemPosition();
+                if(opLocalidad!=0){
+                    strLocalidad = localidadAdapter.getItem(opLocalidad).toString();
+                    Toast.makeText(getContext(),"Localidad: "+strLocalidad, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override

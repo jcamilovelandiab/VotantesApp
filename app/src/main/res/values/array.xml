@@ -5,6 +5,7 @@
         <item>No se ha seleccionado ningún estado</item>
     </string-array>
 
+
     <string-array name="estados">
         <item>Selecciona un estado</item>
         <item>15 - Mexico</item>
@@ -84,7 +85,7 @@
     </string-array>
 
     <string-array name="seccion_cdmx">
-        <item>selecciona una seccion</item>
+        <item>Selecciona una sección</item>
         <item>1478</item>
         <item>1494</item>
         <item>1561</item>
@@ -99,10 +100,8 @@
         <item>3775</item>
     </string-array>
 
-
-
     <string-array name="seccion_guerrero">
-        <item>selecciona una seccion</item>
+        <item>Selecciona una sección</item>
         <item>1209</item>
         <item>754</item>
         <item>1004</item>
@@ -120,7 +119,7 @@
 
 
     <string-array name="seccion_mexico">
-        <item>selecciona una seccion</item>
+        <item>Selecciona una sección</item>
         <item>937</item>
         <item>1025</item>
         <item>0495</item>
@@ -131,20 +130,20 @@
         <item>2432</item>
         <item>2464</item>
         <item>3922</item>
-
     </string-array>
+
     <string-array name="seccion_morelos">
-    <item>selecciona una seccion</item>
-    <item>196</item>
-    <item>295</item>
-    <item>300</item>
-    <item>364</item>
-    <item>133</item>
-    <item>902</item>
-    <item>895</item>
-    <item>899</item>
-    <item>763</item>
-    <item>754</item>
+        <item>Selecciona una sección</item>
+        <item>196</item>
+        <item>295</item>
+        <item>300</item>
+        <item>364</item>
+        <item>133</item>
+        <item>902</item>
+        <item>895</item>
+        <item>899</item>
+        <item>763</item>
+        <item>754</item>
     </string-array>
 
 

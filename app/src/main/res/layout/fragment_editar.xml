@@ -225,13 +225,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:entries="@array/o0"/>
                     <Spinner
                         android:id="@+id/editar_sp_localidad"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:entries="@array/o0"/>
                 </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

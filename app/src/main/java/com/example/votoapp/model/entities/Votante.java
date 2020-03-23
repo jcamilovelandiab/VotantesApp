@@ -178,8 +178,6 @@ public class Votante {
         String[] arrDomicilio = this.getDomicilio().split("\\r?\\n");
         assert(arrDomicilio.length==5);
         String d =
-                "   Estado: " + estado +"\r\n"+
-                "   Municipio: " + municipio +"\r\n"+
                 "   CALLE: "+arrDomicilio[0]+"\r\n"+
                 "   NÚMERO INTERIOR: "+arrDomicilio[1]+"\r\n"+
                 "   NÚMERO EXTERIOR: "+arrDomicilio[2]+"\r\n"+
@@ -191,11 +189,14 @@ public class Votante {
                 "Nombres: " + nombres + "\r\n"+
                 "Apellidos: " + apellidos + "\r\n"+
                 "Domicilio:\n" + d + "\r\n"+
+                "   Estado: " + estado +"\r\n"+
+                "   Municipio: " + municipio +"\r\n"+
                 "Fecha de Nacimiento: " + fecha_nacimiento + "\r\n"+
                 "Sexo:" + sexo.toString() +"\r\n"+
                 "Clave Electoral: " + clave_electoral + "\r\n"+
                 "Año de registro: " + anio_registro +"\r\n"+
                 "No de version: " + no_version +"\r\n"+
+
                 "Año de emisión: " + anio_emision +"\r\n"+
                 "Vigencia: " + vigencia +"\r\n"+
                 "Finado: " + finado +"]";

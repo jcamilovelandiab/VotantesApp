@@ -60,9 +60,6 @@ public class ConsultarFragment extends Fragment {
         btn_consultar = root.findViewById(R.id.consultar_btn_consultar);
         lv_votantes = root.findViewById(R.id.consultar_lv_lista_votantes);
 
-        configureSpinnerEstado();
-        configureBtnConsultar();
-
         //base de datos
         sqlite = new SQLite(getContext());
         sqlite.abrir();
@@ -72,6 +69,9 @@ public class ConsultarFragment extends Fragment {
         et_curp.setText("");
         strEstado = ""; strMunicipio="";
 
+        configureSpinnerEstado();
+        configureBtnConsultar();
+
         return root;
     }
 
@@ -79,6 +79,7 @@ public class ConsultarFragment extends Fragment {
         reg = sqlite.getStringVotantesFromCursor(cursor);
         imagenes = sqlite.getImagenes(cursor);
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,reg);
+        int items = adaptador.getCount();
         lv_votantes.setAdapter(adaptador);
         lv_votantes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

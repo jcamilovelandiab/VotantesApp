@@ -243,6 +243,8 @@ public class EditarFragment extends Fragment implements OnMapReadyCallback {
                             int posEstado = buscarPosicion(R.array.estados, votante.getEstado());
                             if(posEstado!=-1){
                                 strMunicipio = votante.getMunicipio();
+                                strSeccion = votante.getSeccion();
+                                strLocalidad = votante.getLocalidad();
                                 sp_estado.setSelection(posEstado);
                             }
 
@@ -250,6 +252,10 @@ public class EditarFragment extends Fragment implements OnMapReadyCallback {
                             tv_finado.setText((finado)?"Finado":"Activo");
                             if(finado){
                                 disableEnableControls(false, layout_contenedor);
+                            }else{
+                                disableEnableControls(true, layout_contenedor);
+                                et_idVotante.setEnabled(false);
+                                et_no_version.setEnabled(false);
                             }
 
                         }else{
@@ -285,18 +291,41 @@ public class EditarFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int opEstado = sp_estado.getSelectedItemPosition();
-                int municipioArray=-1;
+                int municipioArray=-1, seccionArray=-1, localidadArray=-1;
                 switch (opEstado){
-                    case 1: municipioArray=R.array.mexico; break;
-                    case 2: municipioArray = R.array.cdmx; break;
-                    case 3: municipioArray = R.array.morelos; break;
-                    case 4: municipioArray = R.array.guerrero; break;
+                    case 1:
+                        municipioArray=R.array.mexico;
+                        seccionArray=R.array.seccion_mexico;
+                        localidadArray=R.array.localidad_mexico;
+                        break;
+                    case 2:
+                        municipioArray = R.array.cdmx;
+                        seccionArray=R.array.seccion_cdmx;
+                        localidadArray=R.array.localidad_cdmx;
+                        break;
+                    case 3:
+                        municipioArray = R.array.morelos;
+                        seccionArray=R.array.seccion_morelos;
+                        localidadArray=R.array.localidad_morelos;
+                        break;
+                    case 4:
+                        municipioArray = R.array.guerrero;
+                        seccionArray=R.array.seccion_guerrero;
+                        localidadArray=R.array.localidad_guerrero;
+                        break;
                 }
                 if(opEstado!=0){
                     strEstado = estadoAdapter.getItem(opEstado).toString();
-                    final ArrayAdapter<CharSequence> municipiosAdapter =
+
+                    final ArrayAdapter<CharSequence> municipioAdapter =
                             ArrayAdapter.createFromResource(getContext(), municipioArray, android.R.layout.simple_spinner_item);
-                    configureSpinnerMunicipio(municipiosAdapter, municipioArray);
+                    final ArrayAdapter<CharSequence> seccionAdapter =
+                            ArrayAdapter.createFromResource(getContext(), seccionArray, android.R.layout.simple_spinner_item);
+                    final ArrayAdapter<CharSequence> localidadAdapter =
+                            ArrayAdapter.createFromResource(getContext(), localidadArray, android.R.layout.simple_spinner_item);
+                    configureSpinnerMunicipio(municipioAdapter, municipioArray);
+                    configureSpinnerSeccion(seccionAdapter, seccionArray);
+                    configureSpinnerLocalidad(localidadAdapter, localidadArray);
                 }
             }
             @Override
@@ -322,6 +351,54 @@ public class EditarFragment extends Fragment implements OnMapReadyCallback {
                 if(opMunicipio!=0){
                     strMunicipio = municipiosAdapter.getItem(opMunicipio).toString();
                     Toast.makeText(getContext(),"Estado: "+strEstado+"\nMunicipio: "+strMunicipio, Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void configureSpinnerSeccion(final ArrayAdapter<CharSequence> seccionAdapter, int seccionArray){
+        sp_seccion.setAdapter(seccionAdapter);
+        if(strSeccion!=null){
+            int posSeccion = buscarPosicion(seccionArray,strSeccion);
+            if(posSeccion!=-1){
+                sp_seccion.setSelection(posSeccion);
+            }
+        }
+        sp_seccion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int opSeccion = sp_seccion.getSelectedItemPosition();
+                if(opSeccion!=0){
+                    strSeccion = seccionAdapter.getItem(opSeccion).toString();
+                    Toast.makeText(getContext(),"Sección: "+strSeccion, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void configureSpinnerLocalidad(final ArrayAdapter<CharSequence> localidadAdapter, int localidadArray){
+        sp_localidad.setAdapter(localidadAdapter);
+        if(strLocalidad!=null){
+            int posLocalidad = buscarPosicion(localidadArray,strLocalidad);
+            if(posLocalidad!=-1){
+                sp_localidad.setSelection(posLocalidad);
+            }
+        }
+        sp_localidad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int opLocalidad = sp_localidad.getSelectedItemPosition();
+                if(opLocalidad!=0){
+                    strLocalidad = localidadAdapter.getItem(opLocalidad).toString();
+                    Toast.makeText(getContext(),"Localidad: "+strLocalidad, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -442,11 +519,11 @@ public class EditarFragment extends Fragment implements OnMapReadyCallback {
                         !pathImage.equals("")){
 
                     String domicilio =
-                            "CLL:"+et_calle.getText().toString()+
-                                    ",NI:"+et_numInt.getText().toString()+
-                                    ",NE:"+et_numExt.getText().toString()+
-                                    ",COL:"+et_colonia.getText().toString()+
-                                    ",CP:"+et_codigo_postal.getText().toString();
+                            et_calle.getText().toString()+"\n"+
+                                    et_numInt.getText().toString()+"\n"+
+                                    et_numExt.getText().toString()+"\n"+
+                                    et_colonia.getText().toString()+"\n"+
+                                    et_codigo_postal.getText().toString();
 
                     //dentro de if
                     Toast.makeText(getContext(), strEstado+" "+strMunicipio+" "+
