@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -44,6 +46,7 @@ public class ConsultarFragment extends Fragment {
     ListView lv_votantes;
 
     private SQLite sqlite;
+    private LinearLayout consultar_layout_votantes;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -69,6 +72,8 @@ public class ConsultarFragment extends Fragment {
         et_curp.setText("");
         strEstado = ""; strMunicipio="";
 
+        consultar_layout_votantes = root.findViewById(R.id.consultar_layout_votantes);
+
         configureSpinnerEstado();
         configureBtnConsultar();
 
@@ -80,6 +85,13 @@ public class ConsultarFragment extends Fragment {
         imagenes = sqlite.getImagenes(cursor);
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,reg);
         int items = adaptador.getCount();
+        // Gets the layout params that will allow you to resize the layout
+        ViewGroup.LayoutParams params = consultar_layout_votantes.getLayoutParams();
+        // Changes the height and width to the specified *pixels*
+        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, items*410, getResources().getDisplayMetrics());
+        params.height = height;
+        consultar_layout_votantes.setLayoutParams(params);
+
         lv_votantes.setAdapter(adaptador);
         lv_votantes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
