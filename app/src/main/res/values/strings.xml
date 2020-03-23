@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Voto app</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_header_title">Voto app</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_crear">Crear</string>
+    <string name="menu_consultar">Consultar</string>
+    <string name="menu_eliminar">Eliminar</string>
+    <string name="menu_editar">Editar</string>
+    <string name="menu_listar">Lista</string>
+    <string name="menu_creditos">Creditos</string>
+
+    <string name="todo">picture</string>
+    <string name="home_tv_titulo">
+        Voto App
+
+    </string>
+    <string name="home_tv_descripcion">
+        Aplicación de insersión de datos, eliminación y edición de sistema de votantes
+    </string>
+
+    <string name="action_buscar">Buscar</string>
+    <string name="universidad">\nInstituto Tecnológico de Toluca</string>
+    <string name="estudiante">Integrantes</string>
+    <string name="nombre_estudiante">Juan Camilo Velandia Botello</string>
+    <string name="nombre_estudiante_ara">Arantza Reveles Nieto</string>
+    <string name="nombre_estudiante_juanjo">Juan Jose Hernandez Arreola</string>
+    <string name="profesor">Profesora</string>
+    <string name="nombre_profesor">Rocio Elizabeth Pulido Alba</string>
+    <string name="carrera">Carrera:</string>
+    <string name="nombre_carrera">Ingeniería en Sistemas Computacionales</string>
+    <string name="materia">Materia:</string>
+    <string name="nombre_materia">Desarrollo de Aplicaciones Móviles</string>
+    <string name="semestre">Semestre: Enero - Junio</string>
+    <string name="Grupo">Carrera: TICS</string>
+    <string name="ciclo">Ciclo escolar 2020</string>
+    <string name="emision">EMISION</string>
+
+    <!-- NUEVAS VARIABLES  -->
+
+    <string name="action_login">Login</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_exit">Exit</string>
+
+    <string name="crear_titulo">Nuevo Registro</string>
+    <string name="editar_titulo">Editar Registro</string>
+
+    <string name="input_user">Ingrese su usuario</string>
+    <string name="input_password">Ingrese su contraseña</string>
+    <string name="input_apellidos">Ingrese sus apellidos</string>
+    <string name="input_nombres">Ingrese sus nombres</string>
+    <string name="input_numero_interior">Número interior</string>
+    <string name="input_numero_exterior">Número exterior</string>
+    <string name="input_colonia">Colonia</string>
+    <string name="input_codigo_postal">Código postal</string>
+    <string name="input_fecha_de_nacimiento">Fecha de nacimiento</string>
+    <string name="input_clave_electoral">Clave electoral</string>
+    <string name="input_curp">CURP</string>
+    <string name="input_anio_emision">Año de emisión</string>
+    <string name="input_vigencia">Vigencia</string>
+    <string name="action_limpiar">Limpiar</string>
+    <string name="action_guardar">Guardar</string>
+
+    <string name="action_modificar">Modificar</string>
+    <string name="input_buscar_idVotante">Ingrese el id del votante</string>
+    <string name="title_activity_consultor_main">ConsultorMainActivity</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="input_anio_registro">Año de registro</string>
+    <string name="input_idVotante">ID</string>
+    <string name="input_no_version">No. versión</string>
+    <string name="input_finado">Finado</string>
+
+
+</resources>

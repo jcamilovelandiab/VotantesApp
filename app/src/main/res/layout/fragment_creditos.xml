@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="338dp"
+        android:layout_height="625dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="2dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/creditos_tv_tecnologico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/universidad"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="398dp"
+            android:layout_height="205dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/creditos_tv_estudiante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estudiante"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/creditos_tv_nombre_estudiante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_estudiante"
+                />
+
+
+            <TextView
+                android:id="@+id/id_tv_estudiante_arantza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_estudiante_ara" />
+
+            <TextView
+                android:id="@+id/id_tv_estidiante_juanjo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_estudiante_juanjo" />
+
+            <TextView
+                android:id="@+id/creditos_tv_profesor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profesor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/creditos_tv_nombre_profesor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_profesor" />
+
+            <TextView
+                android:id="@+id/creditos_tv_carrera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carrera"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/creditos_tv_nombre_carrera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_carrera" />
+
+            <TextView
+                android:id="@+id/creditos_tv_materia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/materia"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/creditos_tv_nombre_materia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_materia" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="397dp"
+            android:layout_height="33dp">
+
+            <TextView
+                android:id="@+id/creditos_tv_semestre"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:text="@string/semestre" />
+
+            <TextView
+                android:id="@+id/creditos_tv_grupo"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Grupo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/escudo" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="o0">
+        <item>No se ha seleccionado ningún estado</item>
+    </string-array>
+
+    <string-array name="estados">
+        <item>Selecciona un estado</item>
+        <item>15 - Mexico</item>
+        <item>09 - Ciudad de méxico</item>
+        <item>17 - Morelos</item>
+        <item>12 - Guerrero</item>
+    </string-array>
+
+    <string-array name="cdmx">
+        <item>Selecciona el municipio</item>
+        <item>002 AZCAPOTZALCO</item>
+        <item>0007 ALDANA</item>
+        <item>0011 COSMOPOLITA AMPLIACION</item>
+        <item>0018 PETROLERA AMPLIACION</item>
+        <item>0022 ANGEL ZIMBRON</item>
+        <item>0025 ARENAL</item>
+        <item>0030 CLAVERIA</item>
+        <item>0044 EUZKADI</item>
+        <item>0058 PEDREGAL DE SANTO DOMINGO</item>
+        <item>0021 OBRERA</item>
+        <item>016 MIGUEL HIDALGO</item>
+        <item>0004 ARGENTINA PONIENTE</item>
+        <item>0008 ARGENTINA ANTIGUA</item>
+    </string-array>
+
+    <string-array name="guerrero">
+        <item>Selecciona el municipio</item>
+        <item>0001 ACAPULCO DE JUAREZ</item>
+        <item>0079 ALTO DEL CAMARON</item>
+        <item>002 AHUACUOTZINGO</item>
+        <item>0001 AHUACUOTZINGO</item>
+        <item>0004 AJUATETLA</item>
+        <item>0018 MALDONADO</item>
+        <item>027 CUTZAMALA DE PINZON</item>
+        <item>0035 ZOTHE</item>
+        <item>030 IXMIQUILPAN</item>
+        <item>034 LOLOTLA</item>
+        <item>048 PACHUCA DE SOTO</item>
+        <item>078 XOCHIATIPAN</item>
+        <item>083 ZEMPOALA</item>
+    </string-array>
+
+    <string-array name="mexico">
+        <item>Selecciona el municipio</item>
+        <item>008 AMATEPEC</item>
+        <item>009 AMECAMECA</item>
+        <item>018 CALIMAYA</item>
+        <item>074 SAN ANTONIO LA ISLA</item>
+        <item>0089 TENANCINGO</item>
+        <item>091 TENANGO DEL VALLE</item>
+        <item>073 RAYON</item>
+        <item>053 MALINALCO</item>
+        <item>054 METEPEC</item>
+        <item>106 TOLUCA</item>
+
+    </string-array>
+
+
+    <string-array name="morelos">
+        <item>Selecciona el municipio</item>
+        <item>001 AMACUZAC</item>
+        <item>002 ATLATLAHUCAN</item>
+        <item>003 AXOCHIAPAN</item>
+        <item>004 AYALA</item>
+        <item>005 COATLAN DEL RIO</item>
+        <item>006 CUAUTLA</item>
+        <item>007 CUERNAVACA</item>
+        <item>009 HUITZILAC</item>
+        <item>012 JOJUTLA</item>
+        <item>014 MAZATEPEC</item>
+    </string-array>
+
+    <string-array name="sexo">
+        <item>Selecciona un género</item>
+        <item>MASCULINO</item>
+        <item>FEMENINO</item>
+    </string-array>
+
+    <string-array name="seccion_cdmx">
+        <item>selecciona una seccion</item>
+        <item>1478</item>
+        <item>1494</item>
+        <item>1561</item>
+        <item>1032</item>
+        <item>1101</item>
+        <item>3706</item>
+        <item>3192</item>
+        <item>4213</item>
+        <item>2478</item>
+        <item>3113</item>
+        <item>3095</item>
+        <item>3775</item>
+    </string-array>
+
+
+
+    <string-array name="seccion_guerrero">
+        <item>selecciona una seccion</item>
+        <item>1209</item>
+        <item>754</item>
+        <item>1004</item>
+        <item>952</item>
+        <item>1083</item>
+        <item>1095</item>
+        <item>1685</item>
+        <item>1688</item>
+        <item>1697</item>
+        <item>481</item>
+        <item>1522</item>
+        <item>1530</item>
+        <item>2507</item>
+    </string-array>
+
+
+    <string-array name="seccion_mexico">
+        <item>selecciona una seccion</item>
+        <item>937</item>
+        <item>1025</item>
+        <item>0495</item>
+        <item>4022</item>
+        <item>4429</item>
+        <item>4471</item>
+        <item>4018</item>
+        <item>2432</item>
+        <item>2464</item>
+        <item>3922</item>
+
+    </string-array>
+    <string-array name="seccion_morelos">
+    <item>selecciona una seccion</item>
+    <item>196</item>
+    <item>295</item>
+    <item>300</item>
+    <item>364</item>
+    <item>133</item>
+    <item>902</item>
+    <item>895</item>
+    <item>899</item>
+    <item>763</item>
+    <item>754</item>
+    </string-array>
+
+
+    <string-array name="localidad_morelos">
+        <item>selecciona una localidad</item>
+        <item>001</item>
+        <item>002</item>
+        <item>003</item>
+        <item>004</item>
+        <item>005</item>
+        <item>006</item>
+        <item>007</item>
+        <item>009</item>
+        <item>012</item>
+        <item>014</item>
+    </string-array>
+
+
+
+    <string-array name="localidad_guerrero">
+        <item>selecciona una localidad</item>
+        <item>0001</item>
+        <item>0079</item>
+        <item>002</item>
+        <item>0001</item>
+        <item>0004</item>
+        <item>0018</item>
+        <item>027</item>
+        <item>0035</item>
+        <item>030</item>
+        <item>034</item>
+        <item>048</item>
+        <item>078</item>
+        <item>083</item>
+    </string-array>
+
+    <string-array name="localidad_mexico">
+    <item>Selecciona la localidad</item>
+    <item>008</item>
+    <item>009</item>
+    <item>018</item>
+    <item>074</item>
+    <item>0089</item>
+    <item>091</item>
+    <item>073</item>
+    <item>053</item>
+    <item>054</item>
+    <item>106</item>
+    </string-array>
+
+    <string-array name="localidad_cdmx">
+        <item>Selecciona la localidad</item>
+        <item>002</item>
+        <item>0007</item>
+        <item>0011</item>
+        <item>0018</item>
+        <item>0022</item>
+        <item>0025</item>
+        <item>0030</item>
+        <item>0044</item>
+        <item>0058</item>
+        <item>0021</item>
+        <item>016</item>
+        <item>0004</item>
+        <item>0008</item>
+    </string-array>
+
+
+</resources>
