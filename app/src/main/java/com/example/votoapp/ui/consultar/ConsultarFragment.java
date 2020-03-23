@@ -88,7 +88,7 @@ public class ConsultarFragment extends Fragment {
         // Gets the layout params that will allow you to resize the layout
         ViewGroup.LayoutParams params = consultar_layout_votantes.getLayoutParams();
         // Changes the height and width to the specified *pixels*
-        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, items*410, getResources().getDisplayMetrics());
+        int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, items*380, getResources().getDisplayMetrics());
         params.height = height;
         consultar_layout_votantes.setLayoutParams(params);
 
