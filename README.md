@@ -1,1 +1,1 @@
-# Votantes application in Android
+# Votantes aplicación en Android
