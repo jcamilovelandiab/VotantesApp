@@ -14,19 +14,21 @@ public class sql extends SQLiteOpenHelper {
             "APELLIDOS TEXT NOT NULL,"+
             "FECHA_NACIMIENTO TEXT NOT NULL," +
             "SEXO TEXT NOT NULL," +
+
             "CLAVE_ELECTORAL TEXT NOT NULL," +
             "CURP TEXT NOT NULL UNIQUE," +
-            "ANIO_REGISTRO TEXT," +
-            "NO_VERSION INTEGER," +
+            "ANIO_REGISTRO INTEGER NOT NULL," +
+            "NO_VERSION INTEGER NOT NULL," +
 
             "ESTADO TEXT NOT NULL," +
             "MUNICIPIO TEXT NOT NULL," +
-
+            "SECCION TEXT NOT NULL,"+
+            "LOCALIDAD TEXT NOT NULL,"+
             "DOMICILIO TEXT NOT NULL," +
 
-            "ANIO_EMISION TEXT NOT NULL," +
-            "VIGENCIA INTEGER," +
-            "FINADO INTEGER," +
+            "ANIO_EMISION INTEGER NOT NULL," +
+            "VIGENCIA INTEGER NOT NULL," +
+            "FINADO INTEGER NOT NULL," +
             "IMAGEN TEXT NOT NULL);";
 
     //Constructor

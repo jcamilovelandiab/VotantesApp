@@ -3,6 +3,7 @@ package com.example.votoapp.SQL;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.Editable;
 import android.util.Log;
@@ -107,9 +108,16 @@ public class SQLite {
         cv.put("VIGENCIA", vigencia);
         cv.put("FINADO", false);
         cv.put("IMAGEN", path_imagen);
-        return (db.insert(
-                "VOTANTES",
-                null, cv) != -1) ? true : false;
+        long result=-1;
+        try{
+            result = db.insertOrThrow(
+                    "VOTANTES",
+                    null, cv);
+        }catch(SQLException e){
+            Log.e("Exception","SQLException"+String.valueOf(e.getMessage()));
+            e.printStackTrace();
+        }
+        return (result != -1) ? true : false;
     }
 
     //Leer base de datos
