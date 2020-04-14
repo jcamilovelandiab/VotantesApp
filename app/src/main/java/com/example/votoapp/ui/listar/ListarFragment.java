@@ -7,12 +7,14 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +39,7 @@ public class ListarFragment extends Fragment {
     ArrayList<String> reg_activos, reg_finados;
     ArrayList<String> imagenes_activos, imagenes_finados;
     ListView lv_votantes_activos, lv_votantes_finados;
+    LinearLayout layout_activos, layout_finados;
     SQLite sqlite;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -47,6 +50,8 @@ public class ListarFragment extends Fragment {
 
         lv_votantes_activos = root.findViewById(R.id.listar_lv_lista_activos);
         lv_votantes_finados = root.findViewById(R.id.listar_lv_lista_finados);
+        layout_activos = root.findViewById(R.id.listar_layout_activos);
+        layout_finados = root.findViewById(R.id.listar_layout_finados);
 
         //base de datos
         sqlite = new SQLite(getContext());
@@ -67,7 +72,6 @@ public class ListarFragment extends Fragment {
         lv_votantes_activos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
                 View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_votante,null);
                 ((TextView)dialogView.findViewById(R.id.dialog_votante_tv_datos)).setText(reg_activos.get(i));
                 ImageView iVImagen=dialogView.findViewById(R.id.dialog_votante_iv_picture);
@@ -75,26 +79,11 @@ public class ListarFragment extends Fragment {
                 AlertDialog.Builder dialogo=new AlertDialog.Builder(getContext());
                 dialogo.setTitle("Votante Activo");
                 dialogo.setView(dialogView);
-                /*dialogo.setNegativeButton("Eliminar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Crear fragmento de tu clase
-                        Fragment fragment = new EditarFragment();
-                        // Obtener el administrador de fragmentos a través de la actividad
-                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                        // Definir una transacción
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        // Remplazar el contenido principal por el fragmento
-                        fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        // Cambiar
-                        fragmentTransaction.commit();
-                    }
-                });*/
                 dialogo.setPositiveButton("Aceptar",null);
                 dialogo.show();
             }
         });
+        resizeLayout(layout_activos, reg_activos.size());
     }
 
     private void configureListVotantesFinados(){
@@ -106,7 +95,6 @@ public class ListarFragment extends Fragment {
         lv_votantes_finados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
                 View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_votante,null);
                 ((TextView)dialogView.findViewById(R.id.dialog_votante_tv_datos)).setText(reg_finados.get(i));
                 ImageView iVImagen=dialogView.findViewById(R.id.dialog_votante_iv_picture);
@@ -118,6 +106,17 @@ public class ListarFragment extends Fragment {
                 dialogo.show();
             }
         });
+        resizeLayout(layout_finados, reg_finados.size());
+    }
+
+    private void resizeLayout(final LinearLayout layout, int elements){
+        // Gets the layout params that will allow you to resize the layout
+        ViewGroup.LayoutParams params = layout.getLayoutParams();
+        // Changes the height and width to the specified *pixels*
+        int heightDP = 385;
+        int heightPixels = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, heightDP, getResources().getDisplayMetrics());
+        params.height = heightPixels*elements;
+        layout.setLayoutParams(params);
     }
 
     //cargar imagen
